@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "4e45f161-db8a-4f9f-8925-67855e01ed13",
+		"name": "Spring Boot Assessment",
+		"description": "A set of APIs for testing purposes used in a Spring Boot assessment.\n\n- GET - Get All users with pagination, Get User by ID, Third Party API - Cat Facts by Heroku\n    \n- POST - Insert new user, Update user information by ID",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18432408"
+	},
+	"item": [
+		{
+			"name": "Get All Users with Pagination (default to pageNo = 0, pageSize = 10)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/users?pageNo=0&pageSize=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "pageNo",
+							"value": "0"
+						},
+						{
+							"key": "pageSize",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add New User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":\"ali100\",\r\n    \"email\":\"ali100@gmail.com\",\r\n    \"location\":\"Kedah, Malaysia\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User by ID",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":\"ali001\",\r\n    \"email\":\"ali_new001@gmail.com\",\r\n    \"location\":\"Kedah, Malaysia\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users/100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Third Party APIs - Cat Fact by Heroku",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/third-party/cat-facts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"third-party",
+						"cat-facts"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
